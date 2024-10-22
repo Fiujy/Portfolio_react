@@ -3,9 +3,9 @@ import picture from '@/assets/Picture.jpeg'
 export default function Picture() {
     return (
         <>
-            <div className="bg-gray-700 flex items-center h-full">
+            <div className="bg-purple-700/30 flex items-center h-full">
                 <div className="flex justify-center items-center">
-                    <img src={picture} alt="placeholder" className="w-3/5 h-4/5" />
+                    <img src={picture} alt="placeholder" className="w-4/5 h-4/5 rounded-xl shadow-2xl" />
                 </div>
             </div>
         </>
