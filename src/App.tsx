@@ -1,25 +1,25 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css'
-import Navbar from './components/Navbar'
-import Picture from '@/components/Picture'
-import Presentation from '@/components/Presentation'
-
+import Navbar from '@/components/Navbar'
+import Home from '@/containers/Home'
+import Websites from '@/containers/Websites'
 
 function App() {
 
   return (
-    <>
-      <Navbar />
-      <div className="flex h-screen flex-col">
-        <div className="flex flex-grow">
-          <div className="w-1/2 flex items-center justify-center">
-            <Picture />
-          </div>
-          <div className="w-1/2 flex items-center justify-center">
-            <Presentation />
-          </div>
-        </div>
+    <Router>
+      <div>
+        <Navbar></Navbar>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/websites" element={<Websites />} />
+          {/* <Route path="/writings" element={<Writings />} />
+          <Route path="/drawings" element={<Drawings />} />
+          <Route path="/about" element={<About />} /> */}
+        </Routes>
       </div>
-    </>
+
+    </Router>
   )
 }
 

@@ -1,7 +1,7 @@
 export default function Presentation() {
     return (
         <>
-            <div className='bg-orange-100/90 flex flex-col items-center justify-center h-full w-full'>
+            <div className='bg-white flex flex-col items-center justify-center h-full w-full'>
                 <div className='bg-transparent'>
                     <div className='space-y-2'>
                         <div className='my-20'>
@@ -21,7 +21,7 @@ export default function Presentation() {
                             <p className=''>Toulouse, France</p>
                         </div>
                     </div>
-                    <button className="btn text-white bg-orange-200 my-20 w-full">My Work</button>
+                    <button className="btn text-white bg-gray-700 hover:bg-gray-600 my-20 w-full">My Work</button>
                 </div>
             </div>
         </>
