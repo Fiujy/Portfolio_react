@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 interface Props {
     className?: string,
     title: string,
