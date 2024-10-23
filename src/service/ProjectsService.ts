@@ -3,9 +3,13 @@ import { IProject } from "@/interfaces/IProjects";
 const API_URL = import.meta.env.VITE_API_URL;
 
 const ProjectsService = {
-  getAllProjects: async () => {
+  getAllProjects: async (type?: string) => {
     try {
-      const response = await fetch(`${API_URL}/projects`);
+      let url = `${API_URL}/projects`;
+      if (type) {
+        url += `?type=${type}`;
+      }
+      const response = await fetch(url);
       if (!response.ok) {
         throw new Error('Failed to fetch projects');
       }

@@ -5,3 +5,7 @@
 body {
     @apply text-black; 
 }
+
+.btn-primary {
+    @apply text-white hover:bg-accent;
+}

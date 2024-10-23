@@ -6,7 +6,7 @@ export default function Presentation() {
                 <div className='w-3/4 m-auto flex flex-col justify-center h-full gap-[5%]'>
                     <div className='space-y-3'>
                         <p className='text-6xl'>Mohamed Kerrouche</p>
-                        <p className='text-4xl text-purple-700'>Developer, and even more.</p>
+                        <p className='text-4xl text-primary'>Developer, and even more.</p>
                     </div>
                     <div className="carousel carousel-center bg-neutral rounded-box space-x-4 p-4 max-h-72">
                         <div className="carousel-item">
@@ -58,7 +58,7 @@ export default function Presentation() {
                             <p className=''>Toulouse, France</p>
                         </div> */}
                     <div className='flex justify-center'> {/* Ajout de flex et justify-center */}
-                        <button className="btn text-white bg-purple-700 hover:bg-purple-900 w-1/4">
+                        <button className="btn text-white bg-primary hover:bg-accent w-1/4">
                             My Work
                         </button>
                     </div>

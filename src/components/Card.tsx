@@ -1,20 +1,36 @@
+import { IProject } from "@/interfaces/IProjects"
+
+import picture  from "@/assets/images/Solaris.webp"
+
 interface Props {
     className?: string,
-    title: string,
+    project: IProject,
+    onClick?: () => void,
 }
 
-const Card = ({ className = "", title = "" }: Props) => {
+const Card = ({ className = "", project, onClick }: Props) => {
     return (
-        <div className={`card card-compact w-full shadow-xl ${className}`}>
+        <div className={`card card-compact w-full shadow-xl rounded-2xl hover:scale-101 hover:shadow-2xl cursor-pointer ${className}`} onClick={onClick}>
             <figure>
-                <img
-                    src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                    alt="Shoes" />
+                {project.imageName ? 
+                    <img
+                        // src={`@/assets/${project.imageName}.png`}
+                        src={picture}
+                        alt={project.title} />
+                    : 
+                    <img
+                        src={picture}
+                        alt={project.title}
+                    />    
+                    }
             </figure>
-            <div className="card-body bg-white">
-                <h2 className="card-title">{title} </h2>
+            <div className="card-body rounded-2xl bg-white">
+                <h2 className="card-title">{project.title} </h2>
                 <div className="card-actions">
-                    <button className="btn btn-primary text-purple-800 hover:text-purple-950">See more</button>
+                    <button className="text-primary hover:text-accent hover:underline" onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
+                        e.stopPropagation()
+                        console.log("clicked on text")
+                    }}>Check it out</button>
                 </div>
             </div>
         </div>
