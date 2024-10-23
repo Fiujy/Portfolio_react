@@ -1,17 +1,32 @@
 import Card from "@/components/Card";
-import { useState } from "react";
+import { IProject } from "@/interfaces/IProjects";
+import ProjectsService from "@/service/ProjectsService";
+import { useEffect, useState } from "react";
 
 export default function Projects() {
+
+  const [projects, setProjects] = useState([]);
+
+  const fetchProjects = async () => {
+    const data = await ProjectsService.getAllProjects();
+    setProjects(data);
+  }
+
+  useEffect(() => {
+    fetchProjects();
+  })
 
   return (
     <>
       <div className="flex flex-col min-h-full bg-white py-5">
-        <div className="grid grid-cols-3 gap-10 px-10">
-          <Card title="Project 1" className=""/>
-          <Card title="Project 2" className=""/>
-          <Card title="Project 3" className=""/>
-          <Card title="Project 4" className=""/>
-          <Card title="Project 5" className=""/>
+        <div className="grid grid-cols-3 gap-36 px-[15%]">
+          {projects.length > 0 ? (
+            projects.map((project: IProject) => (
+              <Card key={project.id} title={project.title} />
+            ))
+          ) : (
+            <p>No Projects</p>
+          )}
         </div>
       </div>
     </>
