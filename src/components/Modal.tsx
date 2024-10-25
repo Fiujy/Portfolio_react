@@ -21,7 +21,7 @@ const Modal = ({ project, onClose }: Props) => {
             {/* Overlay pour cliquer en dehors de la modal et la fermer */}
             <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center" onClick={onClose}>
                 {/* Modal */}
-                <div className="modal-box relative bg-white p-6 rounded-lg max-w-xl  overflow-hidden" onClick={(e) => e.stopPropagation()}>
+                <div className="modal-box relative bg-white p-6 rounded-lg max-w-xl overflow-hidden" onClick={(e) => e.stopPropagation()}>
                     <h4 className="text-xl mb-4">{project.title}</h4>
                     
                     {/* Contenu avec gestion de l'overflow */}

@@ -3,6 +3,9 @@ import './App.css'
 import Navbar from '@/components/Navbar'
 import Home from '@/containers/Home'
 import Projects from '@/containers/Projects'
+import Writings from './containers/Writings'
+import Drawings from './containers/Drawings'
+import Dashboard from './containers/Dashboard'
 
 function App() {
 
@@ -14,9 +17,10 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/projects" element={<Projects />} />
-            {/* <Route path="/writings" element={<Writings />} />
+            <Route path="/writings" element={<Writings />} />
           <Route path="/drawings" element={<Drawings />} />
-          <Route path="/about" element={<About />} /> */}
+          <Route path="/dashboard" element={<Dashboard />} />
+          {/* <Route path="/about" element={<About />} /> */}
           </Routes>
         </div>
       </div>

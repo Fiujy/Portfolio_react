@@ -19,6 +19,9 @@ export default function Navbar() {
                     <li>
                         <a href="/drawings" className={`hover:text-primary ${location.pathname === '/drawings' ? 'border-b-2 border-primary hover:text-black pb-1' : ''}`}>Drawings</a>
                     </li>
+                    <li>
+                        <a href="/dashboard" className={`hover:text-primary text-accent ${location.pathname === '/dashboard' ? 'border-b-2 border-primary hover:text-black pb-1' : ''}`}>Dashboard</a>
+                    </li>
                 </ul>
             </div>
             <div className="navbar-end mx-3">
