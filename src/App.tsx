@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import '@/App.css'
+import '@/i18n'
 import Navbar from '@/components/Navbar'
 import Home from '@/containers/Home'
 import Projects from '@/containers/Projects'
