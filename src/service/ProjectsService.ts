@@ -33,7 +33,7 @@ const ProjectsService = {
     }
   },
 
-  createProject: async (project: IProject) => {
+  addProject: async (project: IProject) => {
     try {
       const response = await fetch(`${API_URL}/projects`, {
         method: 'POST',

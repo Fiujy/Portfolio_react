@@ -1,6 +1,5 @@
 interface Props {
     data: any[]; 
-    // children: React.ReactNode[];
 }
 
 export const Table = ({ data }: Props) => {
@@ -14,12 +13,12 @@ export const Table = ({ data }: Props) => {
     return (
         <div className="overflow-x-auto">
             <table className="table">
-                {/* Head */}
                 <thead>
                     <tr>
                         {keys.map((key: string) => (
                             <th key={key}>{key}</th>
                         ))}
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -28,6 +27,11 @@ export const Table = ({ data }: Props) => {
                             {keys.map((key) => (
                                 <td key={key}>{(item as any)[key]}</td>
                             ))}
+                            <td className="flex flex-row gap-2">
+                                <button className="btn btn-primary">Show</button>
+                                <button className="btn btn-warning">Edit</button>
+                                <button className="btn btn-error">Delete</button>
+                            </td>
                         </tr>
                     ))}
                 </tbody>
