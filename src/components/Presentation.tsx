@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Presentation() {
 
     return (
@@ -8,20 +10,6 @@ export default function Presentation() {
                         <p className='text-6xl'>Mohamed Kerrouche</p>
                         <p className='text-4xl text-primary'>Developer, and even more.</p>
                     </div>
-                    {/* <div className="space-y-3">
-                        <div className='flex'>
-                            <p className='font-bold mr-1'>Phone :</p>
-                            <p className=''>000000</p>
-                        </div>
-                        <div className='flex'>
-                            <p className='font-bold mr-1'>Mail :</p>
-                            <p className=''>mkerrouche.contact@gmail.com</p>
-                        </div>
-                        <div className='flex'>
-                            <p className='font-bold mr-1'>Address :</p>
-                            <p className=''>Toulouse, France</p>
-                        </div>
-                    </div> */}
                     <div className="space-y-3 w-full">
                         <div className="flex flex-row gap-5">
                             <div className="badge badge-accent badge-outline text-lg p-5">React</div>
@@ -40,13 +28,25 @@ export default function Presentation() {
                             <div className="badge badge-accent badge-outline text-lg p-5">Git CI/CD</div>
                         </div>
                     </div>
-                    <div className='flex justify-center flex-row gap-3'>
+                    <div className='flex justify-start flex-row gap-5'>
                         <button className="text-white btn bg-primary hover:bg-accent w-1/4">
-                            My Work
+                            <Link to="/projects">My Work</Link>
                         </button>
                         <button className="text-accent border border-primary btn bg-white hover:bg-accent/20 w-1/4">
-                            Contact Me
+                            <Link to="/contact">Contact Me</Link>
                         </button>
+                        {/* <div className='flex'>
+              <p className='font-bold mr-1'>Phone :</p>
+              <p className=''>000000</p>
+            </div>
+            <div className='flex'>
+              <p className='font-bold mr-1'>Mail :</p>
+              <p className=''>mkerrouche.contact@gmail.com</p>
+            </div>
+            <div className='flex'>
+              <p className='font-bold mr-1'>Address :</p>
+              <p className=''>Toulouse, France</p>
+            </div> */}
                     </div>
                 </div>
             </div>

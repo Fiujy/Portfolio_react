@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import './App.css'
+import '@/App.css'
 import Navbar from '@/components/Navbar'
 import Home from '@/containers/Home'
 import Projects from '@/containers/Projects'
@@ -8,6 +8,7 @@ import Drawings from '@/containers/Drawings'
 import Dashboard from '@/containers/Dashboard/Dashboard'
 import ProjectsAdd from '@/containers/Dashboard/Projects/ProjectsAdd'
 import DashboardHome from '@/containers/Dashboard/DashboardHome'
+import Contact from '@/containers/Contact'
 
 function App() {
 
@@ -22,13 +23,13 @@ function App() {
             <Route path="/writings" element={<Writings />} />
             <Route path="/drawings" element={<Drawings />} />
             <Route path="/dashboard/*" element={<Dashboard />}>
-              <Route path="" element={<DashboardHome />}/>
-              <Route path="projects/add" element={<ProjectsAdd />}/>
+              <Route path="" element={<DashboardHome />} />
+              <Route path="projects/add" element={<ProjectsAdd />} />
             </Route>
+            <Route path="/contact" element={<Contact />} />
           </Routes>
         </div>
       </div>
-
     </Router>
   )
 }

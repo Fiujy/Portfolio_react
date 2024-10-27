@@ -9,3 +9,7 @@ body {
 .btn-primary {
     @apply text-white hover:bg-accent;
 }
+
+.input {
+    @apply focus:outline-none;
+}

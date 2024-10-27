@@ -48,8 +48,8 @@ const ProjectsAdd = () => {
 
   return (
     <>
-      <div className="pt-10 space-y-3 place-items-center bg-gray-50 h-full">
-        <div className="p-10 bg-white space-y-5">
+      <div className="pt-10 space-y-3 flex justify-center min-h-screen bg-gray-100">
+        <div className="p-10 bg-white space-y-5 h-full">
           <div className='flex flex-row'>
             <label className="label flex-shrink-0">Title : </label>
             <input value={title} onChange={(e) => { setTitle(e.target.value) }} type="text" placeholder="Type here" className="input input-bordered w-full max-w-xs" />

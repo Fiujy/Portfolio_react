@@ -5,7 +5,6 @@ import ProjectsService from "@/service/ProjectsService";
 import { useEffect, useState } from "react";
 
 export default function Projects() {
-
   const [projects, setProjects] = useState([]);
   const [selectedProject, setSelectedProject] = useState<IProject | null>(null);
 

@@ -1,6 +1,7 @@
 import { Table } from '@/components/Table'
 import ProjectsService from '@/service/ProjectsService';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const DashboardHome = () => {
 
@@ -18,7 +19,7 @@ const DashboardHome = () => {
   return (
     <>
       <div className='w-10/12 mx-auto py-10 space-y-5'>
-        <button className="btn btn-primary"><a href="/dashboard/projects/add">Add a project</a></button>
+        <button className="btn btn-primary"><Link to="/dashboard/projects/add">Add a project</Link></button>
         <Table data={projects} setData={setProjects}></Table>
       </div>
     </>
