@@ -1,14 +1,36 @@
+import { useState } from "react";
+import Modal from "./Modal";
+import ProjectsService from "@/service/ProjectsService";
+import { IProject } from "@/interfaces/IProjects";
+
 interface Props {
-    data: any[]; 
+    data: any[];
+    setData: React.Dispatch<React.SetStateAction<any[]>>;
 }
 
-export const Table = ({ data }: Props) => {
+export const Table = ({ data, setData }: Props) => {
 
-    if(data.length === 0) {
+    const [selectedProject, setSelectedProject] = useState<IProject | null>(null);
+
+    if (data.length === 0) {
         return <div>No Data Available</div>
     }
 
     const keys = Object.keys(data[0]);
+
+    const handleDelete = async (id: number) => {
+        const isConfirmed = window.confirm('Are you sure you want to delete this project?');
+        if (isConfirmed) {
+            try {
+                await ProjectsService.deleteProject(id);
+                setData(data.filter((item) => item.id !== id));
+                console.log(`Project with id ${id} deleted`);
+                // window.location.reload(); // Rafraîchir la page
+            } catch (error) {
+                console.error('Error deleting project: ', error);
+            }
+        }
+    };
 
     return (
         <div className="overflow-x-auto">
@@ -30,7 +52,7 @@ export const Table = ({ data }: Props) => {
                             <td className="flex flex-row gap-2">
                                 <button className="btn btn-primary">Show</button>
                                 <button className="btn btn-warning">Edit</button>
-                                <button className="btn btn-error">Delete</button>
+                                <button className="btn btn-error" onClick={() => { handleDelete(item.id) }}>Delete</button>
                             </td>
                         </tr>
                     ))}
@@ -39,3 +61,5 @@ export const Table = ({ data }: Props) => {
         </div>
     )
 }
+
+export default Table;

@@ -17,9 +17,9 @@ const DashboardHome = () => {
 
   return (
     <>
-      <div className='w-10/12 mx-auto pt-10'>
-        <button className="btn btn-primary"><a href="/dashboard/projects/add">Ajouter</a></button>
-        <Table data={projects}></Table>
+      <div className='w-10/12 mx-auto py-10 space-y-5'>
+        <button className="btn btn-primary"><a href="/dashboard/projects/add">Add a project</a></button>
+        <Table data={projects} setData={setProjects}></Table>
       </div>
     </>
   )

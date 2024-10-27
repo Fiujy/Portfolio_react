@@ -38,7 +38,7 @@ export default function Projects() {
         </div>
       </div>
       {selectedProject && (
-        <Modal key={selectedProject.id} project={selectedProject} onClose={() => setSelectedProject(null)}></Modal>
+        <Modal key={selectedProject.id} project={selectedProject} onClose={() => setSelectedProject(null)} title={selectedProject.title} content={selectedProject.description}></Modal>
       )}
     </>
   );

@@ -4,9 +4,11 @@ import { useEffect } from 'react';
 interface Props {
     project: IProject;
     onClose: () => void;
+    title: string;
+    content: string;
 }
 
-const Modal = ({ project, onClose }: Props) => {
+const Modal = ({ project, onClose, title, content }: Props) => {
 
     // Empêche le scrolling de l'arrière-plan quand la modal est ouverte
     useEffect(() => {
@@ -22,15 +24,15 @@ const Modal = ({ project, onClose }: Props) => {
             <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center" onClick={onClose}>
                 {/* Modal */}
                 <div className="modal-box relative bg-white p-6 rounded-lg max-w-xl overflow-hidden" onClick={(e) => e.stopPropagation()}>
-                    <h4 className="text-xl mb-4">{project.title}</h4>
+                    <h4 className="text-xl mb-4">{title}</h4>
                     
                     {/* Contenu avec gestion de l'overflow */}
                     <div className="overflow-auto max-h-[300px]">
-                        <p className="mb-4 text-ellipsis overflow-hidden">{project.description}</p>
+                        <p className="mb-4 text-ellipsis overflow-hidden">{content}</p>
                     </div>
                     
                     <div className="modal-action">
-                        <button className="btn btn-primary" onClick={onClose}>Fermer</button>
+                        <button className="btn btn-primary" onClick={onClose}>Close</button>
                     </div>
                 </div>
             </div>

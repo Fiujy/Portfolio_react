@@ -11,7 +11,7 @@ interface Props {
 
 const Card = ({ className = "", project, onClick }: Props) => {
     return (
-        <div className={`card card-compact w-full text-white shadow-lg shadow-primary/30 rounded-xl hover:scale-101 hover:shadow-xl hover:shadow-primary/30 cursor-pointer border border-primary ${className}`} onClick={onClick}>
+        <div className={`card card-compact w-full text-white shadow-lg shadow-primary/30 rounded-xl hover:scale-101 hover:shadow-xl hover:shadow-primary/30 cursor-pointer  ${className}`} onClick={onClick}>
             <div className="h-3/4">
                 <figure className="size-full">
                     {project.title == "Sol@ris" || project.title == "Solaris" ?
@@ -27,10 +27,10 @@ const Card = ({ className = "", project, onClick }: Props) => {
                     }
                 </figure>
             </div>
-            <div className="card-body rounded-2xl bg-primary/100 rounded-t-none h-1/4">
+            <div className="card-body bg-primary/100 rounded-t-none h-1/4">
                 <h2 className="card-title">{project.title} </h2>
                 <div className="card-actions">
-                    <button className="text-primary hover:text-accent hover:underline" onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
+                    <button className="text-white hover:text-secondary hover:underline" onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
                         e.stopPropagation()
                         console.log("clicked on text")
                     }}>Check it out</button>
