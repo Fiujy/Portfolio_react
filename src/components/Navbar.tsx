@@ -1,10 +1,11 @@
 import { Link, useLocation } from 'react-router-dom';
+import Theme from '@/components/Theme';
 
 export default function Navbar() {
-    const location = useLocation(); // Pour obtenir la route actuelle
+    const location = useLocation();
 
     return (
-        <div className="navbar bg-white h-10 fixed shadow-md">
+        <div className="navbar bg-base-100 h-10 fixed shadow-md">
             <div className="navbar-start">
                 <Link to="/" className="btn btn-ghost">Mohamed Kerrouche</Link>
             </div>
@@ -22,12 +23,15 @@ export default function Navbar() {
                     <li>
                         <Link to="/dashboard" className={`hover:text-primary text-accent ${location.pathname === '/dashboard' ? 'border-b-2 border-primary hover:text-black pb-1' : ''}`}>Dashboard</Link>
                     </li>
+                    <li>
+                        <Link to="/contact" className={`hover:text-primary ${location.pathname === '/contact' ? 'border-b-2 border-primary hover:text-black pb-1' : ''}`}>
+                            Contact
+                        </Link>
+                    </li>
                 </ul>
             </div>
             <div className="navbar-end mx-3">
-                <Link to="/contact" className={`hover:text-primary ${location.pathname === '/contact' ? 'border-b-2 border-primary hover:text-black pb-1' : ''}`}>
-                    Contact
-                </Link>
+                <Theme></Theme>
             </div>
         </div>
     );

@@ -18,8 +18,8 @@ const Contact = () => {
 
   return (
     <>
-      <div className="bg-gray-100 flex justify-center min-h-screen pt-10">
-        <div className="p-5 w-2/5 bg-white h-full">
+      <div className="bg-base-300 flex justify-center min-h-screen pt-10">
+        <div className="p-5 w-2/5 bg-base-100 h-full">
           <div className="flex flex-col space-y-5">
             <div className="text-3xl text-accent">Contact Me</div>
             <div>

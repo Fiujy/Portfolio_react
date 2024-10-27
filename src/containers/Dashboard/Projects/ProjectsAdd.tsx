@@ -48,15 +48,15 @@ const ProjectsAdd = () => {
 
   return (
     <>
-      <div className="pt-10 space-y-3 flex justify-center min-h-screen bg-gray-100">
-        <div className="p-10 bg-white space-y-5 h-full">
+      <div className="pt-10 space-y-3 flex justify-center min-h-screen bg-base-300">
+        <div className="p-10 bg-base-100 space-y-5 h-full">
           <div className='flex flex-row'>
             <label className="label flex-shrink-0">Title : </label>
-            <input value={title} onChange={(e) => { setTitle(e.target.value) }} type="text" placeholder="Type here" className="input input-bordered w-full max-w-xs" />
+            <input value={title} onChange={(e) => { setTitle(e.target.value) }} type="text" placeholder="Title" className="input input-bordered w-full max-w-xs" />
           </div>
           <div className='flex flex-row items-start'>
             <label className="label flex-shrink-0">Description : </label>
-            <textarea value={description} onChange={(e) => { setDescription(e.target.value) }} className="textarea textarea-bordered max-w-xs" placeholder="Bio"></textarea>
+            <textarea value={description} onChange={(e) => { setDescription(e.target.value) }} className="textarea textarea-bordered max-w-xs" placeholder="Description"></textarea>
           </div>
           <div className='flex flex-row items-start'>
             <label className="label flex-shrink-0">Type : </label>

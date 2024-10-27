@@ -28,6 +28,12 @@ export default {
           accent: "#581c87",
           neutral: '#581c87',
         },
+        dark: {
+          ...require("daisyui/src/theming/themes")["dark"],
+          primary: "#7e22ce",
+          accent: "#aa4bf3",
+          neutral: '#7c2bbb',
+        },
       },
     ],
   },

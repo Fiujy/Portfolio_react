@@ -4,8 +4,8 @@ export default function Presentation() {
 
     return (
         <>
-            <div className='bg-white h-full w-full'>
-                <div className='w-3/5 m-auto flex flex-col justify-center h-full gap-[5%] bg-transparent'>
+            <div className='bg-base-100 h-full w-full'>
+                <div className='w-3/5 m-auto flex flex-col justify-center h-full gap-[5%] bg-transparent space-y-8'>
                     <div className='space-y-3'>
                         <p className='text-6xl'>Mohamed Kerrouche</p>
                         <p className='text-4xl text-primary'>Developer, and even more.</p>
@@ -32,10 +32,17 @@ export default function Presentation() {
                         <button className="text-white btn bg-primary hover:bg-accent w-1/4">
                             <Link to="/projects">My Work</Link>
                         </button>
-                        <button className="text-accent border border-primary btn bg-white hover:bg-accent/20 w-1/4">
+                        <button className="text-accent border border-primary btn bg-base-100 hover:bg-accent/20 w-1/4">
                             <Link to="/contact">Contact Me</Link>
                         </button>
-                        {/* <div className='flex'>
+                    </div>
+                </div>
+            </div>
+        </>
+    )
+}
+
+{/* <div className='flex'>
               <p className='font-bold mr-1'>Phone :</p>
               <p className=''>000000</p>
             </div>
@@ -47,9 +54,3 @@ export default function Presentation() {
               <p className='font-bold mr-1'>Address :</p>
               <p className=''>Toulouse, France</p>
             </div> */}
-                    </div>
-                </div>
-            </div>
-        </>
-    )
-}

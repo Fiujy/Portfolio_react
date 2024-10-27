@@ -19,7 +19,7 @@ export default function Projects() {
 
   return (
     <>
-      <div className="flex flex-col min-h-full bg-white pb-16">
+      <div className="flex flex-col min-h-full bg-base-300 pb-16">
         <h1 className="text-2xl text-center font-bold text-neutral mt-10">Explore my latest projects in web and app development!</h1>
         <div className="flex flex-row gap-5 mt-10 mb-10 w-[20%] mx-auto">
           <button className="btn btn-primary w-1/3" onClick={() => fetchProjects()}>All</button>
