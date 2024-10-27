@@ -1,40 +1,35 @@
-import React from 'react'
+interface Props {
+    data: any[]; 
+    // children: React.ReactNode[];
+}
 
-export const Table = () => {
+export const Table = ({ data }: Props) => {
+
+    if(data.length === 0) {
+        return <div>No Data Available</div>
+    }
+
+    const keys = Object.keys(data[0]);
+
     return (
         <div className="overflow-x-auto">
             <table className="table">
-                {/* head */}
+                {/* Head */}
                 <thead>
                     <tr>
-                        <th></th>
-                        <th>Name</th>
-                        <th>Job</th>
-                        <th>Favorite Color</th>
+                        {keys.map((key: string) => (
+                            <th key={key}>{key}</th>
+                        ))}
                     </tr>
                 </thead>
                 <tbody>
-                    {/* row 1 */}
-                    <tr>
-                        <th>1</th>
-                        <td>Cy Ganderton</td>
-                        <td>Quality Control Specialist</td>
-                        <td>Blue</td>
-                    </tr>
-                    {/* row 2 */}
-                    <tr>
-                        <th>2</th>
-                        <td>Hart Hagerty</td>
-                        <td>Desktop Support Technician</td>
-                        <td>Purple</td>
-                    </tr>
-                    {/* row 3 */}
-                    <tr>
-                        <th>3</th>
-                        <td>Brice Swyre</td>
-                        <td>Tax Accountant</td>
-                        <td>Red</td>
-                    </tr>
+                    {data.map((item, index) => (
+                        <tr key={index}>
+                            {keys.map((key) => (
+                                <td key={key}>{(item as any)[key]}</td>
+                            ))}
+                        </tr>
+                    ))}
                 </tbody>
             </table>
         </div>
