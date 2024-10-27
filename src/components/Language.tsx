@@ -31,7 +31,7 @@ export const Language = () => {
         {language === 'en' ? 'EN' : 'FR'}
       </div>
       {isDropdownOpen && (
-        <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-auto p-2 shadow">
+        <ul tabIndex={0} className="dropdown-content menu bg-base-100 shadow-primary rounded-box z-[1] w-auto p-2 shadow">
           <li>
             <a onClick={() => changeLanguage('en')} className="flex justify-center items-center">
               EN

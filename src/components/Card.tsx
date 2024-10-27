@@ -31,7 +31,7 @@ const Card = ({ className = "", project, onClick }: Props) => {
                     }
                 </figure>
             </div>
-            <div className="card-body bg-primary/100 rounded-t-none h-1/4">
+            <div className="card-body bg-primary rounded-t-none h-1/4">
                 <h2 className="card-title">{project.title} </h2>
                 <div className="card-actions">
                     <button className="text-white hover:text-secondary hover:underline" onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
