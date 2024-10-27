@@ -33,7 +33,7 @@ export default function Navbar() {
                     </li>
                 </ul>
             </div>
-            <div className="navbar-end mx-3">
+            <div className="navbar-end mx-3 gap-3">
                 <Language></Language>
                 <Theme></Theme>
             </div>
