@@ -13,7 +13,7 @@ const Card = ({ className = "", project, onClick }: Props) => {
     const { t } = useTranslation();
 
     return (
-        <div className={`card text-white bg-red-100 shadow-lg shadow-primary/30 rounded-xl hover:scale-101 hover:shadow-xl hover:shadow-primary/30 cursor-pointer ${className}`} onClick={onClick}>
+        <div className={`card w-full max-w-80 h-60 max-h-60 text-white bg-red-100 shadow-lg shadow-primary/30 rounded-xl hover:scale-101 hover:shadow-xl hover:shadow-primary/30 cursor-pointer ${className}`} onClick={onClick}>
             <div className="h-2/3">
                 <figure className="size-full p-5 flex items-center justify-center">
                     {project.title === "Sol@ris" || project.title === "Solaris" ? (
@@ -23,7 +23,7 @@ const Card = ({ className = "", project, onClick }: Props) => {
                     )}
                 </figure>
             </div>
-            <div className="card-body h-1/3 bg-primary rounded-t-none rounded-xl flex flex-col">
+            <div className="p-3 h-1/3 bg-primary rounded-t-none rounded-xl flex flex-col ">
                 <h2 className="card-title">{project.title}</h2>
                 <div className="card-actions">
                     <button
