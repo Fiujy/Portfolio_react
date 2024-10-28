@@ -8,9 +8,9 @@ export default function Navbar() {
     const { t } = useTranslation();
 
     return (
-        <div className="navbar bg-base-100 h-10 fixed shadow-md">
+        <div className="navbar bg-base-100 h-10 fixed shadow-md px-5">
             <div className="navbar-start">
-                <Link to="/" className="btn btn-ghost">Mohamed Kerrouche</Link>
+                <Link to="/" className="hover:text-primary">Mohamed Kerrouche</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="px-1 flex space-x-16">

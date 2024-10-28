@@ -24,9 +24,8 @@ const Contact = () => {
         <div className="p-5 w-2/5 bg-base-100 h-full">
           <div className="flex flex-col space-y-5">
             <div className="text-3xl text-accent">
-              {/* {t('contactMe')} */}
               <div className="chat chat-start">
-                <div className="chat-bubble text-base-100">
+                <div className="chat-bubble text-white">
                   {t('contactMe')}
                 </div>
               </div>
