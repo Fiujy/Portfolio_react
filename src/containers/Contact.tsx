@@ -23,7 +23,14 @@ const Contact = () => {
       <div className="bg-base-300 flex justify-center min-h-screen pt-10">
         <div className="p-5 w-2/5 bg-base-100 h-full">
           <div className="flex flex-col space-y-5">
-            <div className="text-3xl text-accent">{t('contactMe')}</div>
+            <div className="text-3xl text-accent">
+              {/* {t('contactMe')} */}
+              <div className="chat chat-start">
+                <div className="chat-bubble text-base-100">
+                  {t('contactMe')}
+                </div>
+              </div>
+            </div>
             <div>
               <p>{t('hook')}</p>
             </div>

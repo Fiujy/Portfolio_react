@@ -40,7 +40,7 @@ const resources = {
         "explore": "Découvrez mes derniers projets de développement web et d'application !",
         "noProjects": "Aucun projet",
         "all": "Tous",
-        "web": "Web",
+        "web": "Sites",
         "app": "Applications",
         "checkItOut": "En voir plus",
         "hook": "N'hésitez pas à me contacter à tout moment pour une collaboration sur un projet ou toute autre demande !",

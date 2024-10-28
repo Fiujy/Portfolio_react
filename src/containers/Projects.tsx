@@ -28,14 +28,16 @@ export default function Projects() {
           <button className="btn btn-primary w-1/3" onClick={() => fetchProjects('web')}>{t('web')}</button>
           <button className="btn btn-primary w-1/3" onClick={() => fetchProjects('app')}>{t('app')}</button>
         </div>
-        <div className="grid grid-cols-3 gap-10 px-[10%]">
-          {projects.length > 0 ? (
-            projects.map((project: IProject) => (
-              <Card key={project.id} project={project} onClick={() => setSelectedProject(project)} />
-            ))
-          ) : (
-            <p>{t('noProjects')}</p>
-          )}
+        <div className=" ">
+          <div className="grid grid-cols-3 gap-10 px-[15%]">
+            {projects.length > 0 ? (
+              projects.map((project: IProject) => (
+                <Card className="" key={project.id} project={project} onClick={() => setSelectedProject(project)} />
+              ))
+            ) : (
+              <p>{t('noProjects')}</p>
+            )}
+          </div>
         </div>
       </div>
       {selectedProject && (
