@@ -28,15 +28,19 @@ export default function Projects() {
           <button className="btn btn-primary w-1/3" onClick={() => fetchProjects('web')}>{t('web')}</button>
           <button className="btn btn-primary w-1/3" onClick={() => fetchProjects('app')}>{t('app')}</button>
         </div>
-        <div className="grid grid-cols-3 px-[15%] gap-y-16 justify-items-center">
+        <div className="">
+          <div className="grid grid-cols-3 gap-5 px-[18%]">
             {projects.length > 0 ? (
               projects.map((project: IProject) => (
-                <Card className="" key={project.id} project={project} onClick={() => setSelectedProject(project)} />
+                <div className="col-span-1">
+                  <Card className="" key={project.id} project={project} onClick={() => setSelectedProject(project)} />
+                </div>
               ))
             ) : (
               <p>{t('noProjects')}</p>
             )}
           </div>
+        </div>
       </div>
       {selectedProject && (
         <Modal key={selectedProject.id} project={selectedProject} onClose={() => setSelectedProject(null)} title={selectedProject.title} content={selectedProject.description}></Modal>

@@ -4,6 +4,7 @@ import { initReactI18next } from 'react-i18next';
 const resources = {
   en: {
     translation: {
+        "home": "Home",
         "projects": "Projects",
         "writings": "Writings",
         "drawings": "Drawings",
@@ -30,6 +31,7 @@ const resources = {
   },
   fr: {
     translation: {
+        "home": "Accueil",
         "projects": "Projets",
         "writings": "Écrits",
         "drawings": "Dessins",

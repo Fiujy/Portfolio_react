@@ -8,14 +8,12 @@ const ProjectsAdd = () => {
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
   const [type, setType] = useState('')
-  const [imageName, setImageName] = useState('')
   const navigate = useNavigate();
 
   const displayInfos = () => {
     console.log('Title : ', title)
     console.log('Description : ', description)
     console.log('Type : ', type)
-    console.log('Image Name : ', imageName)
   }
 
   const handleSubmit = async () => {
@@ -23,11 +21,10 @@ const ProjectsAdd = () => {
       title: title,
       description: description,
       type: type ? type : 'web',
-      imageName: imageName
     };
 
     try {
-      if (newProject.title && newProject.description && newProject.imageName) {
+      if (newProject.title && newProject.description) {
         await ProjectsService.addProject(newProject);
         console.log('Project added');
         clearProject();
@@ -43,7 +40,6 @@ const ProjectsAdd = () => {
     setTitle('');
     setDescription('');
     setType('web');
-    setImageName('');
   }
 
   return (
@@ -64,10 +60,6 @@ const ProjectsAdd = () => {
               <option value="web">Web</option>
               <option value="app">App</option>
             </select>
-          </div>
-          <div className='flex flex-row'>
-            <label className="label flex-shrink-0">Image Name : </label>
-            <input value={imageName} onChange={(e) => { setImageName(e.target.value) }} type="text" placeholder="Type here" className="input input-bordered w-full max-w-xs" />
           </div>
           <div className="flex flex-row justify-center gap-2 pt-5">
             <button className="btn btn-warning" onClick={() => navigate(-1)}>Cancel</button>

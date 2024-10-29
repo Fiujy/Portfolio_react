@@ -3,5 +3,4 @@ export interface IProject {
   title: string;
   description: string;
   type?: string;
-  imageName?: string;
 }
