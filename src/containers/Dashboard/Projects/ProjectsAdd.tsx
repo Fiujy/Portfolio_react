@@ -7,20 +7,25 @@ const ProjectsAdd = () => {
 
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
+  const [descriptionFr, setDescriptionFr] = useState('')
   const [type, setType] = useState('')
+  const [link, setLink] = useState('')
   const navigate = useNavigate();
 
   const displayInfos = () => {
     console.log('Title : ', title)
     console.log('Description : ', description)
     console.log('Type : ', type)
+    console.log('Link : ', link)
   }
 
   const handleSubmit = async () => {
     const newProject = {
       title: title,
       description: description,
+      descriptionFr: descriptionFr,
       type: type ? type : 'web',
+      link: link,
     };
 
     try {
@@ -39,7 +44,9 @@ const ProjectsAdd = () => {
   const clearProject = () => {
     setTitle('');
     setDescription('');
+    setDescriptionFr('');
     setType('web');
+    setLink('');
   }
 
   return (
@@ -55,11 +62,19 @@ const ProjectsAdd = () => {
             <textarea value={description} onChange={(e) => { setDescription(e.target.value) }} className="textarea textarea-bordered max-w-xs" placeholder="Description"></textarea>
           </div>
           <div className='flex flex-row items-start'>
+            <label className="label flex-shrink-0">Description FR : </label>
+            <textarea value={descriptionFr} onChange={(e) => { setDescriptionFr(e.target.value) }} className="textarea textarea-bordered max-w-xs" placeholder="Description Fr"></textarea>
+          </div>
+          <div className='flex flex-row items-start'>
             <label className="label flex-shrink-0">Type : </label>
             <select value={type} onChange={(e) => { setType(e.target.value) }} className="select select-bordered w-full max-w-xs">
               <option value="web">Web</option>
               <option value="app">App</option>
             </select>
+          </div>
+          <div className='flex flex-row'>
+            <label className="label flex-shrink-0">Link : </label>
+            <input value={link} onChange={(e) => { setLink(e.target.value) }} type="text" placeholder="Link" className="input input-bordered w-full max-w-xs" />
           </div>
           <div className="flex flex-row justify-center gap-2 pt-5">
             <button className="btn btn-warning" onClick={() => navigate(-1)}>Cancel</button>

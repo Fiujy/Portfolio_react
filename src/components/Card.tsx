@@ -17,7 +17,6 @@ const Card = ({ className = "", project, onClick }: Props) => {
             const image = await import(`@/assets/images/${imageName.toLowerCase()}.webp`);
             return image.default;
         } catch (error) {
-            console.warn(`Image ${imageName} not found, using placeholder.`);
             return placeholderImage;
         }
     };
@@ -47,14 +46,17 @@ const Card = ({ className = "", project, onClick }: Props) => {
             <div className="p-3 h-1/3 bg-primary rounded-t-none rounded-xl flex flex-col space-y-1">
                 <h2 className="card-title">{project.title}</h2>
                 <div className="card-actions">
-                    <button
-                        className="text-white hover:text-secondary hover:underline"
-                    onClick={(e) => {
-                        e.stopPropagation();
-                        
-                    }}>
-                        {t('checkItOut')}
-                    </button>
+                    {project.link && (
+                        <button
+                            className="text-white hover:text-secondary hover:underline"
+                            onClick={(e) => {
+                                e.stopPropagation();
+
+                            }}
+                        >
+                           <a href={project.link}> {t('checkItOut')}</a>
+                        </button>
+                    )}
                 </div>
             </div>
         </div>

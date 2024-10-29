@@ -8,11 +8,19 @@ import { useTranslation } from "react-i18next";
 export default function Projects() {
   const [projects, setProjects] = useState([]);
   const [selectedProject, setSelectedProject] = useState<IProject | null>(null);
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const fetchProjects = async (type?: string) => {
     const data = await ProjectsService.getAllProjects(type);
     setProjects(data);
+  }
+
+  const getDescriptionByLanguage = (description: string, descriptionFr: string | undefined, currentLanguage: string) => {
+    if (currentLanguage === 'fr' && descriptionFr) {
+      return descriptionFr;
+    }
+
+    return description;
   }
 
   useEffect(() => {
@@ -32,7 +40,7 @@ export default function Projects() {
           <div className="grid grid-cols-3 gap-5 px-[18%]">
             {projects.length > 0 ? (
               projects.map((project: IProject) => (
-                <div className="col-span-1">
+                <div key={project.id} className="col-span-1">
                   <Card className="" key={project.id} project={project} onClick={() => setSelectedProject(project)} />
                 </div>
               ))
@@ -43,7 +51,9 @@ export default function Projects() {
         </div>
       </div>
       {selectedProject && (
-        <Modal key={selectedProject.id} project={selectedProject} onClose={() => setSelectedProject(null)} title={selectedProject.title} content={selectedProject.description}></Modal>
+        <Modal key={selectedProject.id} project={selectedProject} onClose={() => setSelectedProject(null)} title={selectedProject.title} 
+          content={getDescriptionByLanguage(selectedProject.description, selectedProject.descriptionFr, i18n.language)}>
+        </Modal>
       )}
     </>
   );
