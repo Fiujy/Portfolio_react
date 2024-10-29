@@ -2,6 +2,7 @@ import { useState } from "react";
 import Modal from "./Modal";
 import ProjectsService from "@/service/ProjectsService";
 import { IProject } from "@/interfaces/IProjects";
+import { Link } from "react-router-dom";
 
 interface Props {
     data: any[];
@@ -50,8 +51,8 @@ export const Table = ({ data, setData }: Props) => {
                                 <td key={key}>{(item as any)[key]}</td>
                             ))}
                             <td className="flex flex-row gap-2">
-                                <button className="btn btn-primary">Show</button>
-                                <button className="btn btn-warning">Edit</button>
+                                {/* <button className="btn btn-primary">Show</button> */}
+                                <button className="btn btn-warning"><Link to={`/dashboard/projects/edit/${item.id}`} state={{ project: item }} >Edit</Link></button>
                                 <button className="btn btn-error" onClick={() => { handleDelete(item.id) }}>Delete</button>
                             </td>
                         </tr>

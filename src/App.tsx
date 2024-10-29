@@ -10,6 +10,7 @@ import Dashboard from '@/containers/Dashboard/Dashboard'
 import ProjectsAdd from '@/containers/Dashboard/Projects/ProjectsAdd'
 import DashboardHome from '@/containers/Dashboard/DashboardHome'
 import Contact from '@/containers/Contact'
+import ProjectsEdit from '@/containers/Dashboard/Projects/ProjectsEdit'
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
             <Route path="/dashboard/*" element={<Dashboard />}>
               <Route path="" element={<DashboardHome />} />
               <Route path="projects/add" element={<ProjectsAdd />} />
+              <Route path="projects/edit/:id" element={<ProjectsEdit />} />
             </Route>
             <Route path="/contact" element={<Contact />} />
           </Routes>

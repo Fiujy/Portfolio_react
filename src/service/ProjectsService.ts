@@ -55,7 +55,7 @@ const ProjectsService = {
   updateProject: async (id: number, project: IProject) => {
     try {
       const response = await fetch(`${API_URL}/projects/${id}`, {
-        method: 'PUT',
+        method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
         },
