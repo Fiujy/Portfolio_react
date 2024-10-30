@@ -24,11 +24,11 @@ function App() {
             <Route path="/projects" element={<Projects />} />
             <Route path="/writings" element={<Writings />} />
             <Route path="/drawings" element={<Drawings />} />
-            <Route path="/dashboard/*" element={<Dashboard />}>
+            {/* <Route path="/dashboard/*" element={<Dashboard />}>
               <Route path="" element={<DashboardHome />} />
               <Route path="projects/add" element={<ProjectsAdd />} />
               <Route path="projects/edit/:id" element={<ProjectsEdit />} />
-            </Route>
+            </Route> */}
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </div>
